@@ -74,7 +74,7 @@ migrate = Migrate(app,db)
 @app.route("/service_plans")
 def get_service_plans():   
     try:
-        data = ServicePlan.query.all() 
+        data = ServicePlan.query.order_by(ServicePlan.id.desc()).all() 
     except Exception as e:
         print(e) 
 
